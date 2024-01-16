@@ -1,0 +1,26 @@
+#pragma once
+
+#include "lve_device.hpp"
+
+namespace lve {
+  class LveModel {
+  public:
+
+    FirstApp();
+    ~FirstApp();
+
+    //delete copy-constructor
+    FirstApp(const FirstApp&) = delete;
+
+    //delete copy-operator
+    FirstApp& operator=(const FirstApp&) = delete;
+
+
+  private:
+    LveDevice& lveDevice;
+    VkBuffer vertexBuffer;
+    VkDeviceMemory vertexBufferMemory;
+    uint32_t vertexCount;
+    
+  };
+} // namespace lve
